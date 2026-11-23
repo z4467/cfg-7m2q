@@ -7,12 +7,18 @@
 
 | 文件 | 说明 | 地址 |
 |---|---|---|
-| `oktv-alive.json` | 全量 + 成人源，只留实测可用站点 | `https://raw.githubusercontent.com/z4467/tvbox-config/main/oktv-alive.json` |
-| `oktv.json` | 全量 + 成人源，含全部站点 | `https://raw.githubusercontent.com/z4467/tvbox-config/main/oktv.json` |
-| `oktv-safe-alive.json` | 不含成人源，只留实测可用 | `https://raw.githubusercontent.com/z4467/tvbox-config/main/oktv-safe-alive.json` |
-| `oktv-safe.json` | 不含成人源，含全部站点 | `https://raw.githubusercontent.com/z4467/tvbox-config/main/oktv-safe.json` |
+| `tvbox-alive.json` | **电脑端 TVBox Desktop**，实测可用站（type=3） | `https://raw.githubusercontent.com/z4467/tvbox-config/main/tvbox-alive.json` |
+| `tvbox.json` | 电脑端 TVBox Desktop，全量（type=3） | `https://raw.githubusercontent.com/z4467/tvbox-config/main/tvbox.json` |
+| `oktv-alive.json` | **电视/手机（OK影视·影视仓）**，实测可用站（type=1） | `https://raw.githubusercontent.com/z4467/tvbox-config/main/oktv-alive.json` |
+| `oktv.json` | 电视/手机，全量 | `https://raw.githubusercontent.com/z4467/tvbox-config/main/oktv.json` |
+| `oktv-safe-alive.json` | 不含成人源，实测可用 | `https://raw.githubusercontent.com/z4467/tvbox-config/main/oktv-safe-alive.json` |
+| `oktv-safe.json` | 不含成人源，全量 | `https://raw.githubusercontent.com/z4467/tvbox-config/main/oktv-safe.json` |
 | jsDelivr 镜像 | raw 打不开时用 | `https://cdn.jsdelivr.net/gh/z4467/tvbox-config@main/oktv-alive.json` |
 | ghfast 镜像 | 备选 | `https://ghfast.top/https://raw.githubusercontent.com/z4467/tvbox-config/main/oktv-alive.json` |
+
+> **`type` 在两类 App 里含义不一样**：FongMi 内核（OK影视/影视仓）把 CMS 采集接口定为 `1`，
+> 写成 `3` 会被当成 spider 源 → 站点能列出但内容空白；电脑端 TVBox Desktop 反过来，
+> CMS 必须写 `3`，写 `1` 会被当成 HTML 规则站 → 订阅直接报错。所以两类设备要用不同的文件。
 
 > jsDelivr 对 `@main` 有缓存。刚更新完想立刻看到新内容，可以用固定 commit 链接，
 > 或者等几分钟（工作流会自动请求 jsDelivr 刷新缓存）。
