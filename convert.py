@@ -173,6 +173,17 @@ def dump(obj, path):
     print(f"  → {path}  {len(obj.get('sites', []))} 站")
 
 
+def for_desktop(sites):
+    """电脑端 TVBox Desktop 的 type 语义不同：CMS 采集接口要写 3，写 1 会被当成
+    需要 HTML 规则的站点，直接报错。这里单独产出一份桌面端配置。"""
+    out = []
+    for s in sites:
+        d = dict(s)
+        d["type"] = 3
+        out.append(d)
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--no-probe", action="store_true", help="不实测站点存活")
@@ -187,7 +198,7 @@ def main():
 
     full = build(sites)
     dump(full, "oktv.json")
-    dump(full, "tvbox.json")
+    dump(build(for_desktop(sites)), "tvbox.json")   # 电脑端专用：type=3
 
     if args.no_probe:
         alive = sites
@@ -198,6 +209,7 @@ def main():
         alive = [s for s, o in zip(sites, ok) if o]
         print(f"存活：{len(alive)}/{len(sites)}")
     dump(build(alive), "oktv-alive.json")
+    dump(build(for_desktop(alive)), "tvbox-alive.json")   # 电脑端精简版
 
     # 额外再存一份不含成人源的版本，家里电视/给小孩看时用这两个
     safe = [s for s in sites if "🔞" not in s["name"]]
