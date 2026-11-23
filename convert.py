@@ -184,6 +184,28 @@ def for_desktop(sites):
     return out
 
 
+def desktop_native(sites):
+    """电脑端自家 B 方言（format=tvbox-desktop/1，type 用 "cms"），可读性更好。"""
+    out = []
+    for s in sites:
+        out.append({
+            "key": s["key"],
+            "name": s["name"],
+            "type": "cms",
+            "api": s["api"],
+            "searchable": bool(s.get("searchable")),
+            "quickSearch": bool(s.get("quickSearch")),
+            "filterable": bool(s.get("filterable")),
+        })
+    return {
+        "format": "tvbox-desktop/1",
+        "name": "TVBox Desktop 电脑端配置（LunaTV 转换）",
+        "sites": out,
+        "lives": [],
+        "parses": [],
+    }
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--no-probe", action="store_true", help="不实测站点存活")
@@ -210,6 +232,8 @@ def main():
         print(f"存活：{len(alive)}/{len(sites)}")
     dump(build(alive), "oktv-alive.json")
     dump(build(for_desktop(alive)), "tvbox-alive.json")   # 电脑端精简版
+    dump(desktop_native(sites), "tvbox-desktop.json")     # 电脑端 B 方言（type: cms）
+    dump(desktop_native(alive), "tvbox-desktop-alive.json")
 
     # 额外再存一份不含成人源的版本，家里电视/给小孩看时用这两个
     safe = [s for s in sites if "🔞" not in s["name"]]

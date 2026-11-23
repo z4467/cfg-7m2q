@@ -35,7 +35,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add oktv.json oktv-alive.json tvbox.json tvbox-alive.json oktv-safe.json oktv-safe-alive.json version.json
+          git add oktv.json oktv-alive.json tvbox.json tvbox-alive.json tvbox-desktop.json tvbox-desktop-alive.json oktv-safe.json oktv-safe-alive.json version.json
           if git diff --cached --quiet; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
             echo "上游无变化，跳过提交"
