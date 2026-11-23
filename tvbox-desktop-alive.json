@@ -273,6 +273,15 @@
    "filterable": false
   },
   {
+   "key": "csp_thzy8_me",
+   "name": "🔞桃花资源",
+   "type": "cms",
+   "api": "https://thzy1.me/api.php/provide/vod",
+   "searchable": true,
+   "quickSearch": true,
+   "filterable": false
+  },
+  {
    "key": "csp_ckzy_me",
    "name": "🔞 CK-资源",
    "type": "cms",

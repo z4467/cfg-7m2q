@@ -1,9 +1,9 @@
 {
- "updated_utc": "2026-11-23 10:45:13 UTC",
+ "updated_utc": "2026-11-23 10:49:59 UTC",
  "total": 69,
- "alive": 37,
+ "alive": 38,
  "fty_sites": 50,
- "tv_all": 86,
+ "tv_all": 118,
  "include_adult": true,
  "sources": [
   "https://raw.githubusercontent.com/hafrey1/LunaTV-config/main/LunaTV-config.json",

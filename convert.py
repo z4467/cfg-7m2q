@@ -274,9 +274,9 @@ def main():
         print(f"  ! 饭太硬抓取失败，跳过：{str(e)[:60]}")
         info_fty = 0
 
-    # 电视专用合并版：LunaTV 的 CMS 活站 + 饭太硬的 spider 站，共用一个链接
-    keys = {s["key"] for s in alive}
-    merged = list(alive)
+    # 电视专用合并版：LunaTV 全量 CMS + 饭太硬的 spider 站，共用一个链接
+    keys = {s["key"] for s in sites}
+    merged = list(sites)
     for s in fty.get("sites", []):
         if "请勿" in (s.get("name") or ""):     # 饭太硬里的提示卡片，不是真站点
             continue

@@ -6,7 +6,7 @@ LunaTV 接口 + 饭太硬接口 → TVBox / OK影视 订阅配置，每 6 小时
 
 | 设备 | 文件 | 地址 |
 |---|---|---|
-| 电视 / 手机 | `tv-all.json`（合并版，38 CMS 站 + 饭太硬 50 站 + 5 直播） | `https://gcore.jsdelivr.net/gh/z4467/tvbox-config@main/tv-all.json` |
+| 电视 / 手机 | `tv-all.json`（合并版，69 CMS 站 + 饭太硬 49 站 + 5 直播） | `https://gcore.jsdelivr.net/gh/z4467/tvbox-config@main/tv-all.json` |
 | 电脑 | `tvbox-desktop-alive.json`（实测可用） | `https://gcore.jsdelivr.net/gh/z4467/tvbox-config@main/tvbox-desktop-alive.json` |
 | 电脑 | `tvbox-desktop.json`（全量） | `https://gcore.jsdelivr.net/gh/z4467/tvbox-config@main/tvbox-desktop.json` |
 
@@ -24,3 +24,4 @@ LunaTV 接口 + 饭太硬接口 → TVBox / OK影视 订阅配置，每 6 小时
 ## 自动更新
 
 `.github/workflows/update.yml`：每 6 小时跑 `python convert.py --include-adult`，有变化才提交，提交后自动刷 jsDelivr 缓存。也可在 Actions 里手动 Run workflow。
+
