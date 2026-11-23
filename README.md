@@ -5,20 +5,42 @@
 
 ## 订阅地址
 
+### 电视 / 手机（OK影视、影视仓等 FongMi 内核）
+
 | 文件 | 说明 | 地址 |
 |---|---|---|
-| `tvbox-alive.json` | **电脑端 TVBox Desktop**，实测可用站（type=3） | `https://raw.githubusercontent.com/z4467/tvbox-config/main/tvbox-alive.json` |
-| `tvbox.json` | 电脑端 TVBox Desktop，全量（type=3） | `https://raw.githubusercontent.com/z4467/tvbox-config/main/tvbox.json` |
-| `oktv-alive.json` | **电视/手机（OK影视·影视仓）**，实测可用站（type=1） | `https://raw.githubusercontent.com/z4467/tvbox-config/main/oktv-alive.json` |
-| `oktv.json` | 电视/手机，全量 | `https://raw.githubusercontent.com/z4467/tvbox-config/main/oktv.json` |
+| `oktv-alive.json` | 实测可用站（38 站，`type=1`） | `https://raw.githubusercontent.com/z4467/tvbox-config/main/oktv-alive.json` |
+| `oktv.json` | 全量（69 站） | `https://raw.githubusercontent.com/z4467/tvbox-config/main/oktv.json` |
 | `oktv-safe-alive.json` | 不含成人源，实测可用 | `https://raw.githubusercontent.com/z4467/tvbox-config/main/oktv-safe-alive.json` |
 | `oktv-safe.json` | 不含成人源，全量 | `https://raw.githubusercontent.com/z4467/tvbox-config/main/oktv-safe.json` |
-| jsDelivr 镜像 | raw 打不开时用 | `https://cdn.jsdelivr.net/gh/z4467/tvbox-config@main/oktv-alive.json` |
-| ghfast 镜像 | 备选 | `https://ghfast.top/https://raw.githubusercontent.com/z4467/tvbox-config/main/oktv-alive.json` |
+
+### 电脑端 TVBox Desktop
+
+| 文件 | 说明 | 地址 |
+|---|---|---|
+| `tvbox-desktop-alive.json` | 原生格式（`format: tvbox-desktop/1`，`type: cms`），38 站 | `https://gcore.jsdelivr.net/gh/z4467/tvbox-config@main/tvbox-desktop-alive.json` |
+| `tvbox-desktop.json` | 同上，全量 69 站 | `https://gcore.jsdelivr.net/gh/z4467/tvbox-config@main/tvbox-desktop.json` |
+| `tvbox-alive.json` | 标准 TVBox 格式（`type: 3`），38 站 | `https://gcore.jsdelivr.net/gh/z4467/tvbox-config@main/tvbox-alive.json` |
+| `tvbox.json` | 标准 TVBox 格式，全量 69 站 | `https://gcore.jsdelivr.net/gh/z4467/tvbox-config@main/tvbox.json` |
+
+### 镜像（`raw.githubusercontent.com` / `cdn.jsdelivr.net` 打不开时用）
+
+| 域名 | 说明 |
+|---|---|
+| `https://gcore.jsdelivr.net/gh/z4467/tvbox-config@main/<文件名>` | **推荐**，没被 hosts 劫持，App 的 fetch 能直接读 |
+| `https://fastly.jsdelivr.net/gh/z4467/tvbox-config@main/<文件名>` | 备选 |
+| `https://ghfast.top/https://raw.githubusercontent.com/z4467/tvbox-config/main/<文件名>` | 备选 |
+
+> 例：`https://gcore.jsdelivr.net/gh/z4467/tvbox-config@main/tvbox-desktop-alive.json`
+
+> ⚠️ 如果本机装了 Steam++ / Watt Toolkit，它会把 `cdn.jsdelivr.net`、`raw.githubusercontent.com`、
+> `github.com` 写进 hosts 指向 `127.0.0.1`，桌面端 App 的 fetch 不认它的自签证书 → 报 `fetch failed`。
+> 这种情况请用 `gcore` / `fastly` 域名，或在 Steam++ 里关掉 GitHub 加速。
 
 > **`type` 在两类 App 里含义不一样**：FongMi 内核（OK影视/影视仓）把 CMS 采集接口定为 `1`，
 > 写成 `3` 会被当成 spider 源 → 站点能列出但内容空白；电脑端 TVBox Desktop 反过来，
-> CMS 必须写 `3`，写 `1` 会被当成 HTML 规则站 → 订阅直接报错。所以两类设备要用不同的文件。
+> CMS 必须写 `3`（或 B 方言的 `"cms"`），写 `1` 会被当成 HTML 规则站 → 订阅直接报错。
+> 所以两类设备要用不同的文件。
 
 > jsDelivr 对 `@main` 有缓存。刚更新完想立刻看到新内容，可以用固定 commit 链接，
 > 或者等几分钟（工作流会自动请求 jsDelivr 刷新缓存）。
