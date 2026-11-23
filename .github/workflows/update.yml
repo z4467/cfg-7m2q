@@ -48,7 +48,7 @@ jobs:
       - name: 通知 jsDelivr 刷新缓存
         if: steps.commit.outputs.changed == 'true'
         run: |
-          for f in oktv.json oktv-alive.json tvbox.json version.json; do
+          for f in oktv.json oktv-alive.json tvbox-desktop.json tvbox-desktop-alive.json fty.json tv-all.json version.json; do
             curl -s "https://purge.jsdelivr.net/gh/${{ github.repository }}@main/$f" > /dev/null || true
           done
           echo "已请求 jsDelivr 刷新"

@@ -1,100 +1,17 @@
-# tvbox-config
+# cfg-7m2q
 
-LunaTV 接口 + 饭太硬接口 → TVBox / OK影视 订阅配置，每 6 小时自动更新。
+本仓库配置**基于 [hafrey1/LunaTV-config](https://github.com/hafrey1/LunaTV-config) 与「饭太硬」接口修改转换而来**，非原创，仅为个人自用。
+使用前请先读 [DISCLAIMER.md](DISCLAIMER.md)。
 
-> 本项目配置**基于 [hafrey1/LunaTV-config](https://github.com/hafrey1/LunaTV-config) 与「饭太硬」接口修改转换而来**，非原创。仅供个人学习、测试与技术研究，不提供任何音视频内容，禁止商业使用。使用前请阅读文末 [免责声明](#免责声明)。
+- 电视 / 手机：`tv-all.json`
+  `https://gcore.jsdelivr.net/gh/z4467/cfg-7m2q@main/tv-all.json`
+- 电脑：`tvbox-desktop-alive.json`
+  `https://gcore.jsdelivr.net/gh/z4467/cfg-7m2q@main/tvbox-desktop-alive.json`
+- 电脑（全量）：`tvbox-desktop.json`
+  `https://gcore.jsdelivr.net/gh/z4467/cfg-7m2q@main/tvbox-desktop.json`
 
-## 订阅地址
+镜像域名可换 `fastly.jsdelivr.net` 或 `testingcf.jsdelivr.net`，路径不变。
 
-| 设备 | 文件 | 地址 |
-|---|---|---|
-| 电视 / 手机 | `tv-all.json`（合并版，69 CMS 站 + 饭太硬 49 站 + 5 直播） | `https://gcore.jsdelivr.net/gh/z4467/tvbox-config@main/tv-all.json` |
-| 电脑 | `tvbox-desktop-alive.json`（实测可用） | `https://gcore.jsdelivr.net/gh/z4467/tvbox-config@main/tvbox-desktop-alive.json` |
-| 电脑 | `tvbox-desktop.json`（全量） | `https://gcore.jsdelivr.net/gh/z4467/tvbox-config@main/tvbox-desktop.json` |
+电脑端别用 `cdn.jsdelivr.net` 与 `raw.githubusercontent.com`：装了 Steam++ / Watt Toolkit 时这两个域名会被写进 hosts，桌面端会报 `fetch failed`。
 
-单看某一家的：`oktv-alive.json`（LunaTV 38 站）、`oktv.json`（69 站）、`fty.json`（饭太硬 50 站）。
-镜像：域名换成 `fastly.jsdelivr.net` 或 `testingcf.jsdelivr.net`，路径不变。
-
-> 电脑端别用 `cdn.jsdelivr.net` / `raw.githubusercontent.com`：装了 Steam++ / Watt Toolkit 时这两个域名会被写进 hosts 指向 127.0.0.1，桌面端 fetch 不认它的证书会报 `fetch failed`。
-
-## 说明
-
-- 电视/手机（FongMi 内核）CMS 站点写 `type: 1`，spider 站点写 `type: 3`；电脑端 TVBox Desktop 只认 `type: "cms"`，且不能跑 spider，所以 `tv-all.json` 只在电视/手机用。
-- 饭太硬的接口是一张图片 + 尾部 base64，脚本自动解码。
-- 更新状态看 `version.json` 的 `updated_utc / alive / fty_sites / tv_all`。
-
-## 自动更新
-
-`.github/workflows/update.yml`：每 6 小时跑 `python convert.py --include-adult`，有变化才提交，提交后自动刷 jsDelivr 缓存。也可在 Actions 里手动 Run workflow。
-
-## 来源与致谢
-
-本仓库的配置**是在他人项目基础上修改、转换而来，不是原创**：
-
-- LunaTV 站点列表来自 [hafrey1/LunaTV-config](https://github.com/hafrey1/LunaTV-config)（`LunaTV-config.json` / `jin18.json` / `jingjian.json`），本项目仅做格式转换（CMS 站 `type: 1`、适配 FongMi / OK影视 内核与 TVBox Desktop 的 `type: "cms"`）与存活实测筛选。
-- spider 站与直播源来自「饭太硬」接口（`http://www.饭太硬.cc/tv`），本项目仅做图片尾部 base64 解码与格式归一。
-- 上游内容本身整理自互联网公开信息，权利归各采集站、接口提供方与原作者所有。如任何权利人认为本仓库内容侵犯其权益，请提 Issue 或联系仓库所有者，核实后立即删除相关内容。
-
-## 免责声明
-
-**以下条款沿用上游 [hafrey1/LunaTV-config](https://github.com/hafrey1/LunaTV-config) 的免责声明，同样适用于本仓库。任何访问、使用、复制、修改或分发本仓库内容的行为，均视为已阅读并同意以下全部条款。不同意任何一条，请立即停止使用并删除本仓库的全部内容。**
-
-### 一、定义与范围
-
-- **本仓库**：指本 GitHub 仓库及其直接或间接相关的其他仓库。
-- **维护者**：指本仓库的管理员、维护者及任何参与内容整理与分享的人员。
-- **仓库内容**：指本仓库中提供的全部配置文件、源定义、代码片段、文档说明及引用的外部资源信息。
-
-### 二、仓库用途说明
-
-1. 本仓库提供 MoonTV / LunaTV / TVBox 等相关项目的源配置、订阅定义或配置示例，内容均整理自互联网公开信息。
-2. 本仓库内容**仅用于学习、测试与技术研究目的**，包括配置格式研究、源聚合方式分析及客户端兼容性测试。
-3. 本仓库**不存储、不托管、不分发任何音视频文件、媒体流或受版权保护的内容**，亦不提供任何形式的媒体服务。
-4. 除非另有明确书面声明，本仓库**不授予任何商业使用许可**。
-5. 严禁将本仓库内容用于任何违反法律法规、版权规则或所在司法辖区政策的用途。
-
-### 三、无任何担保声明
-
-本仓库及其内容均以「现状（AS IS）」方式提供，维护者不作出任何形式的明示或暗示担保，包括但不限于合法性、准确性、完整性、可用性、适用于特定目的。使用本仓库内容所产生的一切风险均由使用者自行承担。
-
-### 四、责任限制
-
-1. 因使用、误用、修改或分发本仓库内容而导致的任何直接或间接损失（含数据丢失、系统故障、服务中断、法律风险等），维护者概不负责。
-2. 用户在使用本仓库内容过程中违反其所在国家或地区法律法规的，一切法律责任由用户自行承担，与本仓库及维护者无关。
-
-### 五、第三方软件与项目声明
-
-1. MoonTV、LunaTV、TVBox、OK影视及本仓库提及的任何第三方软件、硬件、服务或项目，均与本仓库不存在隶属、合作、授权或背书关系。
-2. 本仓库不对任何第三方软件或服务的功能、合法性或可用性作出保证。
-3. 因使用第三方软件或服务产生的一切后果，由使用者自行承担。
-
-### 六、转载与分发限制
-
-1. 未经上游维护者及本仓库所有者明确授权，禁止以任何形式在其他平台、网站、公众号、自媒体或镜像站点转载、发布或再分发本仓库内容。
-2. 允许在 GitHub 平台内出于学习和研究目的进行 fork，但须保留本免责声明且不得改变仓库性质或用途。
-3. 通过正常开发工具获取的域名、地址或配置信息，且未涉及逆向工程或网络攻击行为的，不构成对计算机系统的非法侵入。
-
-### 七、知识产权与侵权处理
-
-1. 若任何单位或个人认为本仓库内容可能侵犯其合法权益，请及时联系维护者，并提供有效身份证明及权属证明材料。
-2. 核实相关材料后，维护者将依法依规尽快删除或处理相关内容。
-
-### 八、使用期限与删除建议
-
-1. 本仓库内容仅供**临时学习与研究参考**。
-2. 任何关于使用时限（如 24 小时）的表述，均属风险提示性质，并非强制性法律义务（法律另有规定的除外）。
-3. 建议在完成学习或研究后，及时删除本仓库内容的本地副本。
-4. 如有长期或生产环境需求，请自行独立开发实现。
-
-### 九、司法辖区提示
-
-1. 本仓库内容**不建议在中国大陆地区使用**，尤其是在相关应用或配置可能违反当地法律法规的情形下。
-2. 用户应自行评估并承担因使用本仓库内容所带来的合规与法律风险。
-
-### 十、免责声明的修改与接受
-
-1. 维护者保留在不另行通知的情况下随时修改或补充本免责声明的权利。
-2. 任何对本仓库内容的访问、使用、复制、修改或分发行为，均视为已充分阅读并接受本免责声明的全部内容。
-
-**若您不同意本免责声明中的任何条款，请立即停止使用并删除本仓库的全部内容。**
-
+更新状态看 `version.json`。
