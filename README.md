@@ -7,20 +7,34 @@
 | 文件 | 内容 | 站点数 |
 | --- | --- | --- |
 | `tvbox.json` | 全部配置合并去重（推荐用这个） | 64 |
+| `oktv.json` | OK影视 / 影视仓电视端专用，字段精简、只留点播 | 64 |
 | `LunaTV-config.json` | 仅上游 `LunaTV-config.json` | 64 |
 | `jin18.json` | 仅上游 `jin18.json` | 28 |
 | `jingjian.json` | 仅上游 `jingjian.json` | 47 |
 
 ## 怎么用
 
-TVBox / TVBox Desktop 里添加订阅时，直接填对应文件的 **raw 地址**：
+TVBox / TVBox Desktop 里添加订阅时，填下面任意一个地址（推荐第 1 个，打不开就用第 2、3 个）：
 
-```
-https://raw.githubusercontent.com/z4467/tvbox-config/main/tvbox.json
-```
+| 线路 | 地址 |
+| --- | --- |
+| 1. GitHub raw（直连） | `https://raw.githubusercontent.com/z4467/tvbox-config/main/tvbox.json` |
+| 2. jsDelivr 镜像（国内一般更快） | `https://cdn.jsdelivr.net/gh/z4467/tvbox-config@main/tvbox.json` |
+| 3. ghfast 代理 | `https://ghfast.top/https://raw.githubusercontent.com/z4467/tvbox-config/main/tvbox.json` |
 
 - TVBox Desktop：设置 → 配置源 → 添加 → 粘贴上面的地址
 - 手机 TVBox：设置 → 配置地址 → 填入同一地址
+- OK影视 / 影视仓（电视端）：设置 → 点播 → 粘贴 `oktv.json` 的地址 → 确定 → 回首页刷新
+
+OK影视用这条（和其他文件一样可换 jsDelivr / ghfast 前缀）：
+
+```
+https://raw.githubusercontent.com/z4467/tvbox-config/main/oktv.json
+```
+
+> jsDelivr 走 CDN 缓存，通常 12 小时左右同步一次；刚更新完内容想马上生效，先用第 1 条 raw 地址，或者把 `@main` 换成 `@<commit 哈希>`。
+
+其他文件同理，把末尾的 `tvbox.json` 换成 `LunaTV-config.json`、`jin18.json`、`jingjian.json` 即可。
 
 ## 说明
 
