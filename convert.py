@@ -48,16 +48,57 @@ CTX.verify_mode = ssl.CERT_NONE
 
 
 def http_get(url, timeout=20, retries=3):
+    return http_get_bytes(url, timeout, retries).decode("utf-8", "replace")
+
+
+def _idna(url):
+    """中文域名转 punycode，urllib 不认非 ASCII 主机名。"""
+    try:
+        scheme, rest = url.split("://", 1)
+        hostport = rest.split("/", 1)[0]
+        if all(ord(c) < 128 for c in hostport):
+            return url
+        host, _, port = hostport.partition(":")
+        host_ascii = host.encode("idna").decode("ascii")
+        tail = rest[len(hostport):]
+        return f"{scheme}://{host_ascii}{':' + port if port else ''}{tail}"
+    except Exception:
+        return url
+
+
+def http_get_bytes(url, timeout=20, retries=3):
+    url = _idna(url)
     last = None
     for i in range(retries):
         try:
             req = urllib.request.Request(url, headers=UA)
             with urllib.request.urlopen(req, timeout=timeout, context=CTX) as r:
-                return r.read().decode("utf-8", "replace")
-        except Exception as e:  # 网络抖动/镜像失败都重试
+                return r.read()
+        except Exception as e:
             last = e
             time.sleep(1.5 * (i + 1))
     raise RuntimeError(f"下载失败 {url}: {last}")
+
+
+# 饭太硬 的接口是"图片+尾部 base64"，需要解码；它是纯 spider 源，电脑端用不了，
+# 只有 FongMi 内核（电视/手机）能跑，所以单独产出 fty.json。
+FTY_URL = "http://www.饭太硬.cc/tv"
+
+
+def fetch_fty():
+    import base64
+    import re
+    raw = http_get_bytes(FTY_URL)
+    runs = re.findall(rb"[A-Za-z0-9+/=\r\n]{200,}", raw)
+    if not runs:
+        raise RuntimeError("没在图片里找到 base64 配置段")
+    seg = max(runs, key=len).replace(b"\r", b"").replace(b"\n", b"")
+    seg = seg[: len(seg) - (len(seg) % 4)]
+    text = base64.b64decode(seg).decode("utf-8", "replace")
+    # 去掉 // 注释行和多余的尾逗号，转成严格 JSON
+    text = "\n".join(ln for ln in text.splitlines() if not ln.strip().startswith("//"))
+    text = re.sub(r",(\s*[\]}])", r"\1", text)
+    return json.loads(text)
 
 
 SEARCH_BLOCK = ["无法搜索", "暂不支持搜索", "无搜索结果", "污染搜索结果", "禁止搜索结果"]
@@ -242,14 +283,25 @@ def main():
         dump(build(safe), "oktv-safe.json")
         dump(build(safe_alive), "oktv-safe-alive.json")
 
+    # 饭太硬：纯 spider 源，只有电视/手机能跑，电脑端不支持
+    try:
+        fty = fetch_fty()
+        fty.setdefault("sites", [])
+        dump(fty, "fty.json")
+        info_fty = len(fty["sites"])
+    except Exception as e:
+        print(f"  ! 饭太硬抓取失败，跳过：{str(e)[:60]}")
+        info_fty = 0
+
     info = {
         "updated_utc": time.strftime("%Y-%m-%d %H:%M:%S UTC", time.gmtime()),
         "total": len(sites),
         "alive": len(alive),
+        "fty_sites": info_fty,
         "include_adult": args.include_adult,
         "safe_total": len(safe),
         "safe_alive": len(safe_alive),
-        "sources": SOURCES,
+        "sources": SOURCES + [FTY_URL],
     }
     with open(os.path.join(REPO, "version.json"), "w", encoding="utf-8", newline="\n") as f:
         json.dump(info, f, ensure_ascii=False, indent=1)

@@ -23,6 +23,14 @@
 | `tvbox-alive.json` | 标准 TVBox 格式（`type: 3`），38 站 | `https://gcore.jsdelivr.net/gh/z4467/tvbox-config@main/tvbox-alive.json` |
 | `tvbox.json` | 标准 TVBox 格式，全量 69 站 | `https://gcore.jsdelivr.net/gh/z4467/tvbox-config@main/tvbox.json` |
 
+### 饭太硬（`fty.json`，仅电视/手机）
+
+`http://www.饭太硬.cc/tv` 这个接口返回的是一张图片，配置以 base64 附在图片尾部，
+脚本会自动解码。它 **50 个站点全部是 spider 源（`csp_*`）**，依赖自带的 jar（伪装成 jpg）。
+电脑端 TVBox Desktop 明确不支持 jar/dex spider，所以**没有电脑端版本**，只能给 FongMi 内核用：
+
+`https://gcore.jsdelivr.net/gh/z4467/tvbox-config@main/fty.json`
+
 ### 镜像（`raw.githubusercontent.com` / `cdn.jsdelivr.net` 打不开时用）
 
 | 域名 | 说明 |
