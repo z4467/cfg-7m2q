@@ -5,12 +5,14 @@
 
 ## 订阅地址
 
-| 用途 | 地址 |
-|---|---|
-| 精简版（只含实测可用站点，推荐） | `https://raw.githubusercontent.com/z4467/tvbox-config/main/oktv-alive.json` |
-| 全量版（上游全部正规站点） | `https://raw.githubusercontent.com/z4467/tvbox-config/main/oktv.json` |
-| jsDelivr 镜像（raw 打不开时用） | `https://cdn.jsdelivr.net/gh/z4467/tvbox-config@main/oktv-alive.json` |
-| ghfast 镜像 | `https://ghfast.top/https://raw.githubusercontent.com/z4467/tvbox-config/main/oktv-alive.json` |
+| 文件 | 说明 | 地址 |
+|---|---|---|
+| `oktv-alive.json` | 全量 + 成人源，只留实测可用站点 | `https://raw.githubusercontent.com/z4467/tvbox-config/main/oktv-alive.json` |
+| `oktv.json` | 全量 + 成人源，含全部站点 | `https://raw.githubusercontent.com/z4467/tvbox-config/main/oktv.json` |
+| `oktv-safe-alive.json` | 不含成人源，只留实测可用 | `https://raw.githubusercontent.com/z4467/tvbox-config/main/oktv-safe-alive.json` |
+| `oktv-safe.json` | 不含成人源，含全部站点 | `https://raw.githubusercontent.com/z4467/tvbox-config/main/oktv-safe.json` |
+| jsDelivr 镜像 | raw 打不开时用 | `https://cdn.jsdelivr.net/gh/z4467/tvbox-config@main/oktv-alive.json` |
+| ghfast 镜像 | 备选 | `https://ghfast.top/https://raw.githubusercontent.com/z4467/tvbox-config/main/oktv-alive.json` |
 
 > jsDelivr 对 `@main` 有缓存。刚更新完想立刻看到新内容，可以用固定 commit 链接，
 > 或者等几分钟（工作流会自动请求 jsDelivr 刷新缓存）。
@@ -31,17 +33,17 @@
 1. 读取上游 `LunaTV-config.json`、`jin18.json`、`jingjian.json`，兼容 `api_site` 与 `sites` 两种格式；
 2. 按 `api` 去重，跳过 `csp_` 这类需要 spider 的源（只保留 http/https 采集接口）；
 3. **`type` 一律写 1**：CMS JSON 采集接口。写成 3 会被当成 spider 源，症状是"站点有、点进去空白、搜不出东西"；
-4. 默认剔除名字带 🔞 的成人源；需要保留时本地跑 `python convert.py --include-adult`；
+4. 自动更新默认**保留**成人源（`--include-adult`）；同时额外生成一份不含 🔞 的 `oktv-safe*.json`；
 5. 上游 `_comment` 里写"无法搜索/403"等，自动关闭该站的 `searchable`；
-6. 逐个实测 `?ac=detail&pg=1` 是否能返回片单，能返回的才进 `oktv-alive.json`；
+6. 逐个实测 `?ac=detail&pg=1` 是否能返回片单，能返回的才进 `*-alive.json`；
 7. 输出统一带 `flags`、`doh`（阿里/腾讯 DoH，电视端解析更稳）。
 
 ## 本地手动跑
 
 ```bash
-python convert.py               # 默认：剔除成人源 + 实测存活
-python convert.py --no-probe    # 不实测，速度快
-python convert.py --include-adult
+python convert.py --include-adult   # 与自动更新一致：含成人源 + 实测存活
+python convert.py                   # 不含成人源
+python convert.py --no-probe        # 不实测，速度快
 ```
 
-产物：`oktv.json`、`oktv-alive.json`、`tvbox.json`、`version.json`。
+产物：`oktv.json`、`oktv-alive.json`、`tvbox.json`、`oktv-safe.json`、`oktv-safe-alive.json`、`version.json`。
