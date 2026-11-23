@@ -302,16 +302,6 @@
    "detail": "https://heiliaozy.cc"
   },
   {
-   "key": "csp_thzy8_me",
-   "name": "🔞桃花资源",
-   "type": 1,
-   "api": "https://thzy1.me/api.php/provide/vod",
-   "searchable": 1,
-   "quickSearch": 1,
-   "filterable": 0,
-   "detail": "https://thzy8.me"
-  },
-  {
    "key": "csp_ckzy_me",
    "name": "🔞 CK-资源",
    "type": 1,

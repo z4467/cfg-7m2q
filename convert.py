@@ -264,6 +264,7 @@ def main():
     dump(desktop_native(alive), "tvbox-desktop-alive.json")
 
     # 饭太硬：纯 spider 源，只有电视/手机能跑，电脑端不支持
+    fty = {}
     try:
         fty = fetch_fty()
         fty.setdefault("sites", [])
@@ -273,11 +274,36 @@ def main():
         print(f"  ! 饭太硬抓取失败，跳过：{str(e)[:60]}")
         info_fty = 0
 
+    # 电视专用合并版：LunaTV 的 CMS 活站 + 饭太硬的 spider 站，共用一个链接
+    keys = {s["key"] for s in alive}
+    merged = list(alive)
+    for s in fty.get("sites", []):
+        if "请勿" in (s.get("name") or ""):     # 饭太硬里的提示卡片，不是真站点
+            continue
+        k = s.get("key")
+        while k in keys:
+            k = f"{k}_2"
+        if k != s.get("key"):
+            s = dict(s, key=k)
+        keys.add(k)
+        merged.append(s)
+    tv = build(merged)
+    tv["spider"] = fty.get("spider", "")
+    tv["lives"] = fty.get("lives") or []
+    if fty.get("wallpaper"):
+        tv["wallpaper"] = fty["wallpaper"]
+    if fty.get("rules"):
+        tv["rules"] = fty["rules"]
+    if fty.get("hosts"):
+        tv["hosts"] = fty["hosts"]
+    dump(tv, "tv-all.json")
+
     info = {
         "updated_utc": time.strftime("%Y-%m-%d %H:%M:%S UTC", time.gmtime()),
         "total": len(sites),
         "alive": len(alive),
         "fty_sites": info_fty,
+        "tv_all": len(merged),
         "include_adult": args.include_adult,
         "sources": SOURCES + [FTY_URL],
     }
