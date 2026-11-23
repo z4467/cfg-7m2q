@@ -1,0 +1,12 @@
+{
+  "sites": [
+    {"key": "maotai_http", "name": "茅台资源(http)", "type": 3, "api": "http://caiji.maotaizy.cc/api.php/provide/vod", "searchable": 1, "quickSearch": 1, "filterable": 0, "playerType": 1},
+    {"key": "zy360_http", "name": "360资源(http)", "type": 3, "api": "http://360zy.com/api.php/provide/vod", "searchable": 1, "quickSearch": 1, "filterable": 0, "playerType": 1},
+    {"key": "zuidazy_http", "name": "最大资源(http)", "type": 3, "api": "http://api.zuidapi.com/api.php/provide/vod", "searchable": 1, "quickSearch": 1, "filterable": 0, "playerType": 1},
+    {"key": "wujin_http", "name": "无尽资源(http)", "type": 3, "api": "http://api.wujinapi.me/api.php/provide/vod", "searchable": 1, "quickSearch": 1, "filterable": 0, "playerType": 1},
+    {"key": "guangsu_http", "name": "光速资源(http)", "type": 3, "api": "http://api.guangsuapi.com/api.php/provide/vod", "searchable": 1, "quickSearch": 1, "filterable": 0, "playerType": 1}
+  ],
+  "lives": [],
+  "parses": [],
+  "flags": []
+}
