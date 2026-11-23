@@ -1,51 +1,47 @@
-# LunaTV-config → TVBox 订阅配置
+# tvbox-config
 
-把 [hafrey1/LunaTV-config](https://github.com/hafrey1/LunaTV-config) 里的 LunaTV 配置（明文 JSON）转换成通用 TVBox / TVBox Desktop 可直接订阅的配置，自动更新自上游仓库。
+把 [`hafrey1/LunaTV-config`](https://github.com/hafrey1/LunaTV-config) 自动转换成
+**OK影视 / FongMi 内核 / TVBox** 可直接订阅的配置，每 6 小时自动同步一次。
 
-## 文件说明
+## 订阅地址
 
-| 文件 | 内容 | 站点数 |
-| --- | --- | --- |
-| `tvbox.json` | 全部配置合并去重（推荐用这个） | 64 |
-| `oktv.json` | OK影视 / 影视仓电视端专用，字段精简、只留点播 | 64 |
-| `LunaTV-config.json` | 仅上游 `LunaTV-config.json` | 64 |
-| `jin18.json` | 仅上游 `jin18.json` | 28 |
-| `jingjian.json` | 仅上游 `jingjian.json` | 47 |
+| 用途 | 地址 |
+|---|---|
+| 精简版（只含实测可用站点，推荐） | `https://raw.githubusercontent.com/z4467/tvbox-config/main/oktv-alive.json` |
+| 全量版（上游全部正规站点） | `https://raw.githubusercontent.com/z4467/tvbox-config/main/oktv.json` |
+| jsDelivr 镜像（raw 打不开时用） | `https://cdn.jsdelivr.net/gh/z4467/tvbox-config@main/oktv-alive.json` |
+| ghfast 镜像 | `https://ghfast.top/https://raw.githubusercontent.com/z4467/tvbox-config/main/oktv-alive.json` |
 
-## 怎么用
+> jsDelivr 对 `@main` 有缓存。刚更新完想立刻看到新内容，可以用固定 commit 链接，
+> 或者等几分钟（工作流会自动请求 jsDelivr 刷新缓存）。
 
-TVBox / TVBox Desktop 里添加订阅时，填下面任意一个地址（推荐第 1 个，打不开就用第 2、3 个）：
+## 自动更新
 
-| 线路 | 地址 |
-| --- | --- |
-| 1. GitHub raw（直连） | `https://raw.githubusercontent.com/z4467/tvbox-config/main/tvbox.json` |
-| 2. jsDelivr 镜像（国内一般更快） | `https://cdn.jsdelivr.net/gh/z4467/tvbox-config@main/tvbox.json` |
-| 3. ghfast 代理 | `https://ghfast.top/https://raw.githubusercontent.com/z4467/tvbox-config/main/tvbox.json` |
+`.github/workflows/update.yml`：
 
-- TVBox Desktop：设置 → 配置源 → 添加 → 粘贴上面的地址
-- 手机 TVBox：设置 → 配置地址 → 填入同一地址
-- OK影视 / 影视仓（电视端）：设置 → 点播 → 粘贴 `oktv.json` 的地址 → 确定 → 回首页刷新
+- 每 6 小时（UTC `17 */6 * * *`）自动运行，拉取上游三个源重新转换；
+- 有变化才提交（commit message 带 `[skip ci]`，不会形成循环）；
+- 提交后自动调用 `purge.jsdelivr.net` 刷新 CDN 缓存；
+- 也可以在仓库 **Actions → Auto Update TV Config → Run workflow** 手动触发。
 
-OK影视用这条（和其他文件一样可换 jsDelivr / ghfast 前缀）：
+状态看板：`version.json` 里有 `updated_utc / total / alive`，用来确认是否真的更新过。
 
+## 转换规则（`convert.py`）
+
+1. 读取上游 `LunaTV-config.json`、`jin18.json`、`jingjian.json`，兼容 `api_site` 与 `sites` 两种格式；
+2. 按 `api` 去重，跳过 `csp_` 这类需要 spider 的源（只保留 http/https 采集接口）；
+3. **`type` 一律写 1**：CMS JSON 采集接口。写成 3 会被当成 spider 源，症状是"站点有、点进去空白、搜不出东西"；
+4. 默认剔除名字带 🔞 的成人源；需要保留时本地跑 `python convert.py --include-adult`；
+5. 上游 `_comment` 里写"无法搜索/403"等，自动关闭该站的 `searchable`；
+6. 逐个实测 `?ac=detail&pg=1` 是否能返回片单，能返回的才进 `oktv-alive.json`；
+7. 输出统一带 `flags`、`doh`（阿里/腾讯 DoH，电视端解析更稳）。
+
+## 本地手动跑
+
+```bash
+python convert.py               # 默认：剔除成人源 + 实测存活
+python convert.py --no-probe    # 不实测，速度快
+python convert.py --include-adult
 ```
-https://raw.githubusercontent.com/z4467/tvbox-config/main/oktv.json
-```
 
-> jsDelivr 走 CDN 缓存，通常 12 小时左右同步一次；刚更新完内容想马上生效，先用第 1 条 raw 地址，或者把 `@main` 换成 `@<commit 哈希>`。
-
-其他文件同理，把末尾的 `tvbox.json` 换成 `LunaTV-config.json`、`jin18.json`、`jingjian.json` 即可。
-
-## 说明
-
-- 站点类型统一为苹果 CMS（`type: 3`），带搜索、快速搜索、筛选开关。
-- 上游有 5 个条目不是标准苹果 CMS 接口（`优质资源`、`-美少女-`、`-黄AVZY`、`白嫖资源`、`大地资源`），TVBox 无法直接使用，已跳过。
-- 配置只包含站点列表，不含直播源与解析接口（上游本身也没有）。
-- 站点是否可用取决于对方接口状态，配置文件保留全部条目，可在软件「影视源」页自行禁用失效站点。
-
-## 数据来源与更新
-
-上游仓库：[https://github.com/hafrey1/LunaTV-config](https://github.com/hafrey1/LunaTV-config)
-
-上游更新后重新跑一次转换脚本即可再生成，脚本见 [tvbox_convert.py](https://github.com/hafrey1/LunaTV-config)。
-
+产物：`oktv.json`、`oktv-alive.json`、`tvbox.json`、`version.json`。
