@@ -183,15 +183,6 @@
    "filterable": false
   },
   {
-   "key": "csp_fhapi9_com",
-   "name": "🔞番号资源",
-   "type": "cms",
-   "api": "http://fhapi9.com/api.php/provide/vod",
-   "searchable": true,
-   "quickSearch": true,
-   "filterable": false
-  },
-  {
    "key": "csp_apilsbzy1_com",
    "name": "🔞-老色逼-",
    "type": "cms",
@@ -282,6 +273,15 @@
    "filterable": false
   },
   {
+   "key": "csp_thzy8_me",
+   "name": "🔞桃花资源",
+   "type": "cms",
+   "api": "https://thzy1.me/api.php/provide/vod",
+   "searchable": true,
+   "quickSearch": true,
+   "filterable": false
+  },
+  {
    "key": "csp_ckzy_me",
    "name": "🔞 CK-资源",
    "type": "cms",
@@ -333,6 +333,15 @@
    "api": "https://xingba222.com/api.php/provide/vod",
    "searchable": true,
    "quickSearch": true,
+   "filterable": false
+  },
+  {
+   "key": "csp_aosikazy_com",
+   "name": "🔞-奥斯卡-",
+   "type": "cms",
+   "api": "https://aosikazy.com/api.php/provide/vod",
+   "searchable": false,
+   "quickSearch": false,
    "filterable": false
   }
  ],

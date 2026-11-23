@@ -202,16 +202,6 @@
    "detail": "https://apiyutu.com"
   },
   {
-   "key": "csp_fhapi9_com",
-   "name": "🔞番号资源",
-   "type": 1,
-   "api": "http://fhapi9.com/api.php/provide/vod",
-   "searchable": 1,
-   "quickSearch": 1,
-   "filterable": 0,
-   "detail": "http://fhapi9.com"
-  },
-  {
    "key": "csp_apilsbzy1_com",
    "name": "🔞-老色逼-",
    "type": 1,
@@ -312,6 +302,16 @@
    "detail": "https://heiliaozy.cc"
   },
   {
+   "key": "csp_thzy8_me",
+   "name": "🔞桃花资源",
+   "type": 1,
+   "api": "https://thzy1.me/api.php/provide/vod",
+   "searchable": 1,
+   "quickSearch": 1,
+   "filterable": 0,
+   "detail": "https://thzy8.me"
+  },
+  {
    "key": "csp_ckzy_me",
    "name": "🔞 CK-资源",
    "type": 1,
@@ -370,6 +370,16 @@
    "quickSearch": 1,
    "filterable": 0,
    "detail": "https://xingba111.com"
+  },
+  {
+   "key": "csp_aosikazy_com",
+   "name": "🔞-奥斯卡-",
+   "type": 1,
+   "api": "https://aosikazy.com/api.php/provide/vod",
+   "searchable": 0,
+   "quickSearch": 0,
+   "filterable": 0,
+   "detail": "https://aosikazy.com"
   }
  ],
  "lives": [],

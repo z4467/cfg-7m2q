@@ -214,17 +214,6 @@ def dump(obj, path):
     print(f"  → {path}  {len(obj.get('sites', []))} 站")
 
 
-def for_desktop(sites):
-    """电脑端 TVBox Desktop 的 type 语义不同：CMS 采集接口要写 3，写 1 会被当成
-    需要 HTML 规则的站点，直接报错。这里单独产出一份桌面端配置。"""
-    out = []
-    for s in sites:
-        d = dict(s)
-        d["type"] = 3
-        out.append(d)
-    return out
-
-
 def desktop_native(sites):
     """电脑端自家 B 方言（format=tvbox-desktop/1，type 用 "cms"），可读性更好。"""
     out = []
@@ -261,7 +250,6 @@ def main():
 
     full = build(sites)
     dump(full, "oktv.json")
-    dump(build(for_desktop(sites)), "tvbox.json")   # 电脑端专用：type=3
 
     if args.no_probe:
         alive = sites
@@ -272,16 +260,8 @@ def main():
         alive = [s for s, o in zip(sites, ok) if o]
         print(f"存活：{len(alive)}/{len(sites)}")
     dump(build(alive), "oktv-alive.json")
-    dump(build(for_desktop(alive)), "tvbox-alive.json")   # 电脑端精简版
-    dump(desktop_native(sites), "tvbox-desktop.json")     # 电脑端 B 方言（type: cms）
+    dump(desktop_native(sites), "tvbox-desktop.json")      # 电脑端（type: cms）
     dump(desktop_native(alive), "tvbox-desktop-alive.json")
-
-    # 额外再存一份不含成人源的版本，家里电视/给小孩看时用这两个
-    safe = [s for s in sites if "🔞" not in s["name"]]
-    safe_alive = [s for s in alive if "🔞" not in s["name"]]
-    if len(safe) != len(sites):
-        dump(build(safe), "oktv-safe.json")
-        dump(build(safe_alive), "oktv-safe-alive.json")
 
     # 饭太硬：纯 spider 源，只有电视/手机能跑，电脑端不支持
     try:
@@ -299,8 +279,6 @@ def main():
         "alive": len(alive),
         "fty_sites": info_fty,
         "include_adult": args.include_adult,
-        "safe_total": len(safe),
-        "safe_alive": len(safe_alive),
         "sources": SOURCES + [FTY_URL],
     }
     with open(os.path.join(REPO, "version.json"), "w", encoding="utf-8", newline="\n") as f:
