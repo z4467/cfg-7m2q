@@ -180,6 +180,206 @@
    "quickSearch": 0,
    "filterable": 0,
    "detail": "https://yayazy3.com"
+  },
+  {
+   "key": "csp_155zy2_com",
+   "name": "🔞155-资源",
+   "type": 1,
+   "api": "https://155api.com/api.php/provide/vod",
+   "searchable": 1,
+   "quickSearch": 1,
+   "filterable": 0,
+   "detail": "https://155zy2.com"
+  },
+  {
+   "key": "csp_apiyutu_com",
+   "name": "🔞玉兔资源",
+   "type": 1,
+   "api": "https://apiyutu.com/api.php/provide/vod",
+   "searchable": 1,
+   "quickSearch": 1,
+   "filterable": 0,
+   "detail": "https://apiyutu.com"
+  },
+  {
+   "key": "csp_apilsbzy1_com",
+   "name": "🔞-老色逼-",
+   "type": 1,
+   "api": "https://apilsbzy1.com/api.php/provide/vod",
+   "searchable": 1,
+   "quickSearch": 1,
+   "filterable": 0,
+   "detail": "https://apilsbzy1.com"
+  },
+  {
+   "key": "csp_xiaojizy_live",
+   "name": "🔞小鸡资源",
+   "type": 1,
+   "api": "https://api.xiaojizy.live/provide/vod",
+   "searchable": 1,
+   "quickSearch": 1,
+   "filterable": 0,
+   "detail": "https://xiaojizy.live"
+  },
+  {
+   "key": "csp_hsckzy_xyz",
+   "name": "🔞黄色仓库",
+   "type": 1,
+   "api": "https://hsckzy.xyz/api.php/provide/vod",
+   "searchable": 1,
+   "quickSearch": 1,
+   "filterable": 0,
+   "detail": "https://hsckzy.xyz"
+  },
+  {
+   "key": "csp_apidanaizi_com",
+   "name": "🔞-大奶子-",
+   "type": 1,
+   "api": "https://apidanaizi.com/api.php/provide/vod",
+   "searchable": 1,
+   "quickSearch": 1,
+   "filterable": 0,
+   "detail": "https://apidanaizi.com"
+  },
+  {
+   "key": "csp_jkunzyapi_com",
+   "name": "🔞jkun资源",
+   "type": 1,
+   "api": "https://jkunzyapi.com/api.php/provide/vod",
+   "searchable": 1,
+   "quickSearch": 1,
+   "filterable": 0,
+   "detail": "https://jkunzyapi.com"
+  },
+  {
+   "key": "csp_lbapi9_com",
+   "name": "🔞乐播资源",
+   "type": 1,
+   "api": "https://lbapi9.com/api.php/provide/vod",
+   "searchable": 1,
+   "quickSearch": 1,
+   "filterable": 0,
+   "detail": "https://lbapi9.com"
+  },
+  {
+   "key": "csp_slapibf_com",
+   "name": "🔞森林资源",
+   "type": 1,
+   "api": "https://beiyong.slapibf.com/api.php/provide/vod",
+   "searchable": 1,
+   "quickSearch": 1,
+   "filterable": 0,
+   "detail": "https://slapibf.com"
+  },
+  {
+   "key": "csp_doudouzy_com",
+   "name": "🔞豆豆资源",
+   "type": 1,
+   "api": "https://api.douapi.cc/api.php/provide/vod",
+   "searchable": 1,
+   "quickSearch": 1,
+   "filterable": 0,
+   "detail": "https://doudouzy.com"
+  },
+  {
+   "key": "csp_didizy_com",
+   "name": "🔞滴滴资源",
+   "type": 1,
+   "api": "https://api.ddapi.cc/api.php/provide/vod",
+   "searchable": 1,
+   "quickSearch": 1,
+   "filterable": 0,
+   "detail": "https://didizy.com"
+  },
+  {
+   "key": "csp_heiliaozy_cc",
+   "name": "🔞黑料资源",
+   "type": 1,
+   "api": "https://www.heiliaozyapi.com/api.php/provide/vod",
+   "searchable": 1,
+   "quickSearch": 1,
+   "filterable": 0,
+   "detail": "https://heiliaozy.cc"
+  },
+  {
+   "key": "csp_thzy8_me",
+   "name": "🔞桃花资源",
+   "type": 1,
+   "api": "https://thzy1.me/api.php/provide/vod",
+   "searchable": 1,
+   "quickSearch": 1,
+   "filterable": 0,
+   "detail": "https://thzy8.me"
+  },
+  {
+   "key": "csp_ckzy_me",
+   "name": "🔞 CK-资源",
+   "type": 1,
+   "api": "https://ckzy.me/api.php/provide/vod",
+   "searchable": 0,
+   "quickSearch": 0,
+   "filterable": 0,
+   "detail": "https://ckzy.me"
+  },
+  {
+   "key": "csp_souavzyw_com",
+   "name": "🔞souavZY",
+   "type": 1,
+   "api": "https://api.souavzyw.net/api.php/provide/vod",
+   "searchable": 1,
+   "quickSearch": 1,
+   "filterable": 0,
+   "detail": "https://api.souavzyw.net"
+  },
+  {
+   "key": "csp_www_msnii_com",
+   "name": "🔞-美少女-",
+   "type": 1,
+   "api": "https://www.msnii.com/api/json.php",
+   "searchable": 0,
+   "quickSearch": 0,
+   "filterable": 0,
+   "detail": "https://www.msnii.com"
+  },
+  {
+   "key": "csp_www_pgxdy_com",
+   "name": "🔞-黄AVZY",
+   "type": 1,
+   "api": "https://www.pgxdy.com/api/json.php",
+   "searchable": 0,
+   "quickSearch": 0,
+   "filterable": 0,
+   "detail": "https://www.pgxdy.com"
+  },
+  {
+   "key": "csp_www_kxgav_com",
+   "name": "🔞白嫖资源",
+   "type": 1,
+   "api": "https://www.kxgav.com/api/json.php",
+   "searchable": 0,
+   "quickSearch": 0,
+   "filterable": 0,
+   "detail": "https://www.kxgav.com"
+  },
+  {
+   "key": "csp_xingba111_com",
+   "name": "🔞杏吧资源",
+   "type": 1,
+   "api": "https://xingba222.com/api.php/provide/vod",
+   "searchable": 1,
+   "quickSearch": 1,
+   "filterable": 0,
+   "detail": "https://xingba111.com"
+  },
+  {
+   "key": "csp_aosikazy_com",
+   "name": "🔞-奥斯卡-",
+   "type": 1,
+   "api": "https://aosikazy.com/api.php/provide/vod",
+   "searchable": 0,
+   "quickSearch": 0,
+   "filterable": 0,
+   "detail": "https://aosikazy.com"
   }
  ],
  "lives": [],

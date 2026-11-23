@@ -1,8 +1,10 @@
 {
- "updated_utc": "2026-11-23 09:54:29 UTC",
- "total": 39,
- "alive": 18,
- "include_adult": false,
+ "updated_utc": "2026-11-23 09:57:34 UTC",
+ "total": 69,
+ "alive": 38,
+ "include_adult": true,
+ "safe_total": 39,
+ "safe_alive": 18,
  "sources": [
   "https://raw.githubusercontent.com/hafrey1/LunaTV-config/main/LunaTV-config.json",
   "https://raw.githubusercontent.com/hafrey1/LunaTV-config/main/jin18.json",

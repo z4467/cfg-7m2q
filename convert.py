@@ -199,11 +199,20 @@ def main():
         print(f"存活：{len(alive)}/{len(sites)}")
     dump(build(alive), "oktv-alive.json")
 
+    # 额外再存一份不含成人源的版本，家里电视/给小孩看时用这两个
+    safe = [s for s in sites if "🔞" not in s["name"]]
+    safe_alive = [s for s in alive if "🔞" not in s["name"]]
+    if len(safe) != len(sites):
+        dump(build(safe), "oktv-safe.json")
+        dump(build(safe_alive), "oktv-safe-alive.json")
+
     info = {
         "updated_utc": time.strftime("%Y-%m-%d %H:%M:%S UTC", time.gmtime()),
         "total": len(sites),
         "alive": len(alive),
         "include_adult": args.include_adult,
+        "safe_total": len(safe),
+        "safe_alive": len(safe_alive),
         "sources": SOURCES,
     }
     with open(os.path.join(REPO, "version.json"), "w", encoding="utf-8", newline="\n") as f:
