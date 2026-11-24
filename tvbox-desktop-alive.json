@@ -3,37 +3,10 @@
  "name": "TVBox Desktop 电脑端配置（LunaTV 转换）",
  "sites": [
   {
-   "key": "csp_iqiyizyapi_com",
-   "name": "🎬-爱奇艺-",
-   "type": "cms",
-   "api": "https://iqiyizyapi.com/api.php/provide/vod",
-   "searchable": true,
-   "quickSearch": true,
-   "filterable": false
-  },
-  {
    "key": "csp_mtzy_me",
    "name": "🎬茅台资源",
    "type": "cms",
    "api": "https://caiji.maotaizy.cc/api.php/provide/vod",
-   "searchable": true,
-   "quickSearch": true,
-   "filterable": false
-  },
-  {
-   "key": "csp_ikunzy_com",
-   "name": "🎬iKun资源",
-   "type": "cms",
-   "api": "https://ikunzyapi.com/api.php/provide/vod",
-   "searchable": true,
-   "quickSearch": true,
-   "filterable": false
-  },
-  {
-   "key": "csp_dyttzyapi_com",
-   "name": "🎬电影天堂",
-   "type": "cms",
-   "api": "http://caiji.dyttzyapi.com/api.php/provide/vod",
    "searchable": true,
    "quickSearch": true,
    "filterable": false
@@ -66,37 +39,10 @@
    "filterable": false
   },
   {
-   "key": "csp_jszyapi_com",
-   "name": "🎬极速资源",
-   "type": "cms",
-   "api": "https://jszyapi.com/api.php/provide/vod",
-   "searchable": true,
-   "quickSearch": true,
-   "filterable": false
-  },
-  {
    "key": "csp_www_moduzy_net",
    "name": "🎬魔都资源",
    "type": "cms",
    "api": "https://www.mdzyapi.com/api.php/provide/vod",
-   "searchable": true,
-   "quickSearch": true,
-   "filterable": false
-  },
-  {
-   "key": "csp_ffzyapi_com",
-   "name": "🎬非凡资源",
-   "type": "cms",
-   "api": "https://api.ffzyapi.com/api.php/provide/vod",
-   "searchable": true,
-   "quickSearch": true,
-   "filterable": false
-  },
-  {
-   "key": "csp_bfzy_tv",
-   "name": "🎬暴风资源",
-   "type": "cms",
-   "api": "https://bfzyapi.com/api.php/provide/vod",
    "searchable": true,
    "quickSearch": true,
    "filterable": false
@@ -201,15 +147,6 @@
    "filterable": false
   },
   {
-   "key": "csp_1080zyk4_com",
-   "name": "🎬优质资源",
-   "type": "cms",
-   "api": "https://api.yzzy-api.com/inc/apijson.php",
-   "searchable": false,
-   "quickSearch": false,
-   "filterable": false
-  },
-  {
    "key": "csp_www_huyaapi_com",
    "name": "🎬虎牙资源",
    "type": "cms",
@@ -219,28 +156,10 @@
    "filterable": false
   },
   {
-   "key": "csp_yayazy3_com",
-   "name": "🎬鸭鸭资源",
-   "type": "cms",
-   "api": "https://cj.yayazy.net/api.php/provide/vod",
-   "searchable": false,
-   "quickSearch": false,
-   "filterable": false
-  },
-  {
    "key": "csp_suonizy_net",
    "name": "🎬索尼资源",
    "type": "cms",
    "api": "https://suoniapi.com/api.php/provide/vod",
-   "searchable": false,
-   "quickSearch": false,
-   "filterable": false
-  },
-  {
-   "key": "csp_kuaichezy_com",
-   "name": "🎬快车资源",
-   "type": "cms",
-   "api": "https://caiji.kuaichezy.org/api.php/provide/vod",
    "searchable": false,
    "quickSearch": false,
    "filterable": false
@@ -304,6 +223,15 @@
    "name": "🔞小鸡资源",
    "type": "cms",
    "api": "https://api.xiaojizy.live/provide/vod",
+   "searchable": true,
+   "quickSearch": true,
+   "filterable": false
+  },
+  {
+   "key": "csp_hsckzy_xyz",
+   "name": "🔞黄色仓库",
+   "type": "cms",
+   "api": "https://hsckzy.xyz/api.php/provide/vod",
    "searchable": true,
    "quickSearch": true,
    "filterable": false
@@ -390,15 +318,6 @@
    "filterable": false
   },
   {
-   "key": "csp_heiliaozy_cc",
-   "name": "🔞黑料资源",
-   "type": "cms",
-   "api": "https://www.heiliaozyapi.com/api.php/provide/vod",
-   "searchable": true,
-   "quickSearch": true,
-   "filterable": false
-  },
-  {
    "key": "csp_thzy8_me",
    "name": "🔞桃花资源",
    "type": "cms",
@@ -468,15 +387,6 @@
    "api": "https://xingba222.com/api.php/provide/vod",
    "searchable": true,
    "quickSearch": true,
-   "filterable": false
-  },
-  {
-   "key": "csp_aosikazy_com",
-   "name": "🔞-奥斯卡-",
-   "type": "cms",
-   "api": "https://aosikazy.com/api.php/provide/vod",
-   "searchable": false,
-   "quickSearch": false,
    "filterable": false
   }
  ],
