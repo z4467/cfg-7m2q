@@ -3,10 +3,37 @@
  "name": "TVBox Desktop 电脑端配置（LunaTV 转换）",
  "sites": [
   {
-   "key": "csp_mtzy_me",
-   "name": "🎬茅台资源",
+   "key": "csp_iqiyizyapi_com",
+   "name": "🎬-爱奇艺-",
    "type": "cms",
-   "api": "https://caiji.maotaizy.cc/api.php/provide/vod",
+   "api": "https://iqiyizyapi.com/api.php/provide/vod",
+   "searchable": true,
+   "quickSearch": true,
+   "filterable": false
+  },
+  {
+   "key": "csp_ikunzy_com",
+   "name": "🎬iKun资源",
+   "type": "cms",
+   "api": "https://ikunzyapi.com/api.php/provide/vod",
+   "searchable": true,
+   "quickSearch": true,
+   "filterable": false
+  },
+  {
+   "key": "csp_dyttzyapi_com",
+   "name": "🎬电影天堂",
+   "type": "cms",
+   "api": "http://caiji.dyttzyapi.com/api.php/provide/vod",
+   "searchable": true,
+   "quickSearch": true,
+   "filterable": false
+  },
+  {
+   "key": "csp_www_maoyanzy_com",
+   "name": "🎬猫眼资源",
+   "type": "cms",
+   "api": "https://api.maoyanapi.top/api.php/provide/vod",
    "searchable": true,
    "quickSearch": true,
    "filterable": false
@@ -30,10 +57,28 @@
    "filterable": false
   },
   {
-   "key": "csp_zuida_xyz",
-   "name": "🎬最大资源",
+   "key": "csp_jszyapi_com",
+   "name": "🎬极速资源",
    "type": "cms",
-   "api": "https://api.zuidapi.com/api.php/provide/vod",
+   "api": "https://jszyapi.com/api.php/provide/vod",
+   "searchable": true,
+   "quickSearch": true,
+   "filterable": false
+  },
+  {
+   "key": "csp_www_moduzy_net",
+   "name": "🎬魔都资源",
+   "type": "cms",
+   "api": "https://www.mdzyapi.com/api.php/provide/vod",
+   "searchable": true,
+   "quickSearch": true,
+   "filterable": false
+  },
+  {
+   "key": "csp_ffzyapi_com",
+   "name": "🎬非凡资源",
+   "type": "cms",
+   "api": "https://api.ffzyapi.com/api.php/provide/vod",
    "searchable": true,
    "quickSearch": true,
    "filterable": false
@@ -102,6 +147,15 @@
    "filterable": false
   },
   {
+   "key": "csp_caiji_moduapi_cc",
+   "name": "🎬魔都动漫",
+   "type": "cms",
+   "api": "https://caiji.moduapi.cc/api.php/provide/vod",
+   "searchable": true,
+   "quickSearch": true,
+   "filterable": false
+  },
+  {
    "key": "csp_www_ryzyw_com",
    "name": "🎬如意资源",
    "type": "cms",
@@ -129,21 +183,21 @@
    "filterable": false
   },
   {
-   "key": "csp_zuidazy_co",
-   "name": "🎬最大点播",
-   "type": "cms",
-   "api": "https://zuidazy.me/api.php/provide/vod",
-   "searchable": true,
-   "quickSearch": true,
-   "filterable": false
-  },
-  {
    "key": "csp_wujinzy_com",
    "name": "🎬无尽影视",
    "type": "cms",
    "api": "https://api.wujinapi.com/api.php/provide/vod",
    "searchable": true,
    "quickSearch": true,
+   "filterable": false
+  },
+  {
+   "key": "csp_1080zyk4_com",
+   "name": "🎬优质资源",
+   "type": "cms",
+   "api": "https://api.yzzy-api.com/inc/apijson.php",
+   "searchable": false,
+   "quickSearch": false,
    "filterable": false
   },
   {
@@ -156,37 +210,10 @@
    "filterable": false
   },
   {
-   "key": "csp_yayazy3_com",
-   "name": "🎬鸭鸭资源",
-   "type": "cms",
-   "api": "https://cj.yayazy.net/api.php/provide/vod",
-   "searchable": false,
-   "quickSearch": false,
-   "filterable": false
-  },
-  {
    "key": "csp_suonizy_net",
    "name": "🎬索尼资源",
    "type": "cms",
    "api": "https://suoniapi.com/api.php/provide/vod",
-   "searchable": false,
-   "quickSearch": false,
-   "filterable": false
-  },
-  {
-   "key": "csp_kuaichezy_com",
-   "name": "🎬快车资源",
-   "type": "cms",
-   "api": "https://caiji.kuaichezy.org/api.php/provide/vod",
-   "searchable": false,
-   "quickSearch": false,
-   "filterable": false
-  },
-  {
-   "key": "csp_shandianzy_com",
-   "name": "🎬闪电资源",
-   "type": "cms",
-   "api": "https://xsd.sdzyapi.com/api.php/provide/vod",
    "searchable": false,
    "quickSearch": false,
    "filterable": false
@@ -378,33 +405,6 @@
    "api": "https://api.souavzyw.net/api.php/provide/vod",
    "searchable": true,
    "quickSearch": true,
-   "filterable": false
-  },
-  {
-   "key": "csp_www_msnii_com",
-   "name": "🔞-美少女-",
-   "type": "cms",
-   "api": "https://www.msnii.com/api/json.php",
-   "searchable": false,
-   "quickSearch": false,
-   "filterable": false
-  },
-  {
-   "key": "csp_www_pgxdy_com",
-   "name": "🔞-黄AVZY",
-   "type": "cms",
-   "api": "https://www.pgxdy.com/api/json.php",
-   "searchable": false,
-   "quickSearch": false,
-   "filterable": false
-  },
-  {
-   "key": "csp_www_kxgav_com",
-   "name": "🔞白嫖资源",
-   "type": "cms",
-   "api": "https://www.kxgav.com/api/json.php",
-   "searchable": false,
-   "quickSearch": false,
    "filterable": false
   },
   {
