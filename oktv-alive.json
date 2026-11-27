@@ -12,6 +12,16 @@
    "detail": "https://iqiyizyapi.com"
   },
   {
+   "key": "csp_mtzy_me",
+   "name": "🎬茅台资源",
+   "type": 1,
+   "api": "https://caiji.maotaizy.cc/api.php/provide/vod",
+   "searchable": 1,
+   "quickSearch": 1,
+   "filterable": 0,
+   "detail": "https://mtzy.me"
+  },
+  {
    "key": "csp_ikunzy_com",
    "name": "🎬iKun资源",
    "type": 1,
@@ -20,16 +30,6 @@
    "quickSearch": 1,
    "filterable": 0,
    "detail": "https://ikunzy.com"
-  },
-  {
-   "key": "csp_dyttzyapi_com",
-   "name": "🎬电影天堂",
-   "type": 1,
-   "api": "http://caiji.dyttzyapi.com/api.php/provide/vod",
-   "searchable": 1,
-   "quickSearch": 1,
-   "filterable": 0,
-   "detail": "http://caiji.dyttzyapi.com"
   },
   {
    "key": "csp_www_maoyanzy_com",
@@ -60,46 +60,6 @@
    "quickSearch": 1,
    "filterable": 0,
    "detail": "https://360zy.com"
-  },
-  {
-   "key": "csp_www_moduzy_net",
-   "name": "🎬魔都资源",
-   "type": 1,
-   "api": "https://www.mdzyapi.com/api.php/provide/vod",
-   "searchable": 1,
-   "quickSearch": 1,
-   "filterable": 0,
-   "detail": "https://www.moduzy.net"
-  },
-  {
-   "key": "csp_ffzyapi_com",
-   "name": "🎬非凡资源",
-   "type": 1,
-   "api": "https://api.ffzyapi.com/api.php/provide/vod",
-   "searchable": 1,
-   "quickSearch": 1,
-   "filterable": 0,
-   "detail": "https://cj.ffzyapi.com"
-  },
-  {
-   "key": "csp_bfzy_tv",
-   "name": "🎬暴风资源",
-   "type": 1,
-   "api": "https://bfzyapi.com/api.php/provide/vod",
-   "searchable": 1,
-   "quickSearch": 1,
-   "filterable": 0,
-   "detail": "https://bfzy.tv"
-  },
-  {
-   "key": "csp_zuida_xyz",
-   "name": "🎬最大资源",
-   "type": 1,
-   "api": "https://api.zuidapi.com/api.php/provide/vod",
-   "searchable": 1,
-   "quickSearch": 1,
-   "filterable": 0,
-   "detail": "https://zuida.xyz"
   },
   {
    "key": "csp_wujinzy_me",
@@ -152,16 +112,6 @@
    "detail": "https://www.hongniuzy.com"
   },
   {
-   "key": "csp_caiji_moduapi_cc",
-   "name": "🎬魔都动漫",
-   "type": 1,
-   "api": "https://caiji.moduapi.cc/api.php/provide/vod",
-   "searchable": 1,
-   "quickSearch": 1,
-   "filterable": 0,
-   "detail": "https://caiji.moduapi.cc"
-  },
-  {
    "key": "csp_www_ryzyw_com",
    "name": "🎬如意资源",
    "type": 1,
@@ -192,16 +142,6 @@
    "detail": "https://lzizy.net"
   },
   {
-   "key": "csp_zuidazy_co",
-   "name": "🎬最大点播",
-   "type": 1,
-   "api": "https://zuidazy.me/api.php/provide/vod",
-   "searchable": 1,
-   "quickSearch": 1,
-   "filterable": 0,
-   "detail": "https://zuidazy.co"
-  },
-  {
    "key": "csp_wujinzy_com",
    "name": "🎬无尽影视",
    "type": 1,
@@ -222,16 +162,6 @@
    "detail": "https://1080zyk4.com"
   },
   {
-   "key": "csp_yayazy3_com",
-   "name": "🎬鸭鸭资源",
-   "type": 1,
-   "api": "https://cj.yayazy.net/api.php/provide/vod",
-   "searchable": 0,
-   "quickSearch": 0,
-   "filterable": 0,
-   "detail": "https://yayazy3.com"
-  },
-  {
    "key": "csp_suonizy_net",
    "name": "🎬索尼资源",
    "type": 1,
@@ -240,26 +170,6 @@
    "quickSearch": 0,
    "filterable": 0,
    "detail": "https://suonizy.net"
-  },
-  {
-   "key": "csp_kuaichezy_com",
-   "name": "🎬快车资源",
-   "type": 1,
-   "api": "https://caiji.kuaichezy.org/api.php/provide/vod",
-   "searchable": 0,
-   "quickSearch": 0,
-   "filterable": 0,
-   "detail": "https://kuaichezy.com"
-  },
-  {
-   "key": "csp_shandianzy_com",
-   "name": "🎬闪电资源",
-   "type": 1,
-   "api": "https://xsd.sdzyapi.com/api.php/provide/vod",
-   "searchable": 0,
-   "quickSearch": 0,
-   "filterable": 0,
-   "detail": "https://shandianzy.com"
   },
   {
    "key": "csp_91md_me",
