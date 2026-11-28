@@ -30,15 +30,6 @@
    "filterable": false
   },
   {
-   "key": "csp_dyttzyapi_com",
-   "name": "🎬电影天堂",
-   "type": "cms",
-   "api": "http://caiji.dyttzyapi.com/api.php/provide/vod",
-   "searchable": true,
-   "quickSearch": true,
-   "filterable": false
-  },
-  {
    "key": "csp_www_maoyanzy_com",
    "name": "🎬猫眼资源",
    "type": "cms",
@@ -156,15 +147,6 @@
    "filterable": false
   },
   {
-   "key": "csp_www_ryzyw_com",
-   "name": "🎬如意资源",
-   "type": "cms",
-   "api": "https://cj.rycjapi.com/api.php/provide/vod",
-   "searchable": true,
-   "quickSearch": true,
-   "filterable": false
-  },
-  {
    "key": "csp_www_haohuazy_com",
    "name": "🎬豪华资源",
    "type": "cms",
@@ -198,6 +180,15 @@
    "api": "https://api.wujinapi.com/api.php/provide/vod",
    "searchable": true,
    "quickSearch": true,
+   "filterable": false
+  },
+  {
+   "key": "csp_1080zyk4_com",
+   "name": "🎬优质资源",
+   "type": "cms",
+   "api": "https://api.yzzy-api.com/inc/apijson.php",
+   "searchable": false,
+   "quickSearch": false,
    "filterable": false
   },
   {
@@ -286,6 +277,15 @@
    "name": "🔞小鸡资源",
    "type": "cms",
    "api": "https://api.xiaojizy.live/provide/vod",
+   "searchable": true,
+   "quickSearch": true,
+   "filterable": false
+  },
+  {
+   "key": "csp_hsckzy_xyz",
+   "name": "🔞黄色仓库",
+   "type": "cms",
+   "api": "https://hsckzy.xyz/api.php/provide/vod",
    "searchable": true,
    "quickSearch": true,
    "filterable": false

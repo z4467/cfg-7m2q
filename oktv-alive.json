@@ -32,16 +32,6 @@
    "detail": "https://ikunzy.com"
   },
   {
-   "key": "csp_dyttzyapi_com",
-   "name": "🎬电影天堂",
-   "type": 1,
-   "api": "http://caiji.dyttzyapi.com/api.php/provide/vod",
-   "searchable": 1,
-   "quickSearch": 1,
-   "filterable": 0,
-   "detail": "http://caiji.dyttzyapi.com"
-  },
-  {
    "key": "csp_www_maoyanzy_com",
    "name": "🎬猫眼资源",
    "type": 1,
@@ -172,16 +162,6 @@
    "detail": "https://caiji.moduapi.cc"
   },
   {
-   "key": "csp_www_ryzyw_com",
-   "name": "🎬如意资源",
-   "type": 1,
-   "api": "https://cj.rycjapi.com/api.php/provide/vod",
-   "searchable": 1,
-   "quickSearch": 1,
-   "filterable": 0,
-   "detail": "https://www.ryzyw.com"
-  },
-  {
    "key": "csp_www_haohuazy_com",
    "name": "🎬豪华资源",
    "type": 1,
@@ -220,6 +200,16 @@
    "quickSearch": 1,
    "filterable": 0,
    "detail": "https://wujinzy.com"
+  },
+  {
+   "key": "csp_1080zyk4_com",
+   "name": "🎬优质资源",
+   "type": 1,
+   "api": "https://api.yzzy-api.com/inc/apijson.php",
+   "searchable": 0,
+   "quickSearch": 0,
+   "filterable": 0,
+   "detail": "https://1080zyk4.com"
   },
   {
    "key": "csp_yayazy3_com",
@@ -320,6 +310,16 @@
    "quickSearch": 1,
    "filterable": 0,
    "detail": "https://xiaojizy.live"
+  },
+  {
+   "key": "csp_hsckzy_xyz",
+   "name": "🔞黄色仓库",
+   "type": 1,
+   "api": "https://hsckzy.xyz/api.php/provide/vod",
+   "searchable": 1,
+   "quickSearch": 1,
+   "filterable": 0,
+   "detail": "https://hsckzy.xyz"
   },
   {
    "key": "csp_apidanaizi_com",
